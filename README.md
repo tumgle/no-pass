@@ -10,7 +10,24 @@
 
 需要已安装 OpenSSH 服务器（`sshd`）。
 
-## 运行
+## 一键
+
+在要关闭密码登录的服务器上执行。这条命令会提权、装好脚本，然后打开菜单。
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/tumgle/no-pass/main/install.sh)
+```
+
+菜单里可以先看改动、再关闭密码登录。不进菜单、直接执行：
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/tumgle/no-pass/main/install.sh) --dry-run
+bash <(curl -fsSL https://raw.githubusercontent.com/tumgle/no-pass/main/install.sh) --force
+```
+
+装好之后，在这台机器上执行 `no-pass` 会再次打开菜单。
+
+## 在脚本目录里运行
 
 ```bash
 sudo ./disable-password-login.sh --dry-run
